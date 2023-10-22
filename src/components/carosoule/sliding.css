@@ -1,0 +1,35 @@
+/* sliding.css */
+
+.gallery {
+    width: 100%;
+    overflow: hidden;
+}
+
+.gallery-container {
+    display: flex;
+    animation: slide 30s linear infinite; /* Adjust the animation duration */
+    margin-top: 20px;
+    width: 200%; /* Double the width to accommodate duplicated images */
+}
+
+.gallery-item {
+    flex: 0 0 auto;
+    max-width: 100%;
+    margin: 0 10px; /* Optional spacing between images */
+    box-sizing: border-box; /* Include margin in layout */
+}
+
+.gallery-item img {
+    width: 15rem;
+    height: 20rem;
+    border-radius: 10px;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-50%); /* Slide to the left by half of the container width */
+    }
+}

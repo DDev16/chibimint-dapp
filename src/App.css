@@ -13,6 +13,29 @@
   }
 }
 
+/* App.scss */
+.App {
+	text-align: center;
+	
+  }
+  body {
+	font-family: "Blimey Variable", sans-serif;
+  font-size:2rem;
+	/* Rest of your body styles */
+  }
+  
+
+  @font-face {
+    font-family: "Blimey Variable";
+    src: url("https://db.onlinewebfonts.com/t/d573c50173f8483a67c0b94b13033396.eot");
+    src: url("https://db.onlinewebfonts.com/t/d573c50173f8483a67c0b94b13033396.eot?#iefix")format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/d573c50173f8483a67c0b94b13033396.woff2")format("woff2"),
+    url("https://db.onlinewebfonts.com/t/d573c50173f8483a67c0b94b13033396.woff")format("woff"),
+    url("https://db.onlinewebfonts.com/t/d573c50173f8483a67c0b94b13033396.ttf")format("truetype"),
+    url("https://db.onlinewebfonts.com/t/d573c50173f8483a67c0b94b13033396.svg#Blimey Variable")format("svg");
+}
+  /* Home.css */
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;

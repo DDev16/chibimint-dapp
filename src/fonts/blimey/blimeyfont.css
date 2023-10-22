@@ -1,0 +1,12 @@
+/* blimeyfonts.css */
+@font-face {
+    font-family: 'Blimey';
+    src: url('../../../components/fonts/blimey/BlimeyVariable.woff2') format('woff2'); /* Update the path */
+    /* Add additional font formats if needed */
+  }
+  
+  /* Apply Blimey font to specific elements */
+  body {
+    font-family: 'Blimey', cursive;
+  }
+  

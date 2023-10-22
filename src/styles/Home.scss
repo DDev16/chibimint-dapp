@@ -1,0 +1,219 @@
+/* General styling for sections within home container */
+.home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    content: '';
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('../assets/jET9FZ.gif') repeat center center;
+    
+    background-size: contain;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+    position: relative;
+}
+
+.clouds {
+    width: 100%;
+    margin-top: 100vh;
+    position: absolute;
+}
+
+/* Add styling for Chibi Art image, Revenue Sharing image, and Trippy Abyss image */
+.chibi-art,
+.revenue-sharing-image,
+.triptych {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    width: 100%; /* Adjust width for mobile */
+    max-width: 350px; /* Set a maximum width */
+}
+
+/* Stylish styling for sections: header, mint-info, revenue-sharing, learn-more */
+.header,
+.mint-info,
+.revenue-sharing,
+.learn-more {
+    width: 100%;
+    margin: 1rem auto; /* Reduce margin for mobile */
+    padding: 1rem; /* Reduce padding for mobile */
+    background: rgba(19, 9, 9, 0.8);
+    border-radius: 20px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    transition: transform 0.5s, box-shadow 0.5s;
+}
+
+/* Stylish section titles */
+.header h1,
+.mint-info h2,
+.revenue-sharing h2,
+.learn-more h2 {
+    font-size: 4rem; /* Adjust font size for mobile */
+    margin: 0;
+    font-family: "Blimey Variable", sans-serif;
+    
+    align-items: center;
+    text-align: center;
+}
+
+/* Stylish section paragraphs */
+.header p,
+.mint-info p,
+.revenue-sharing p,
+.learn-more p {
+    font-size: 2rem; /* Adjust font size for mobile */
+    text-align: center;
+}
+
+/* Parallax Animation */
+.header,
+.mint-info,
+.revenue-sharing,
+.learn-more {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+.header:hover,
+.mint-info:hover,
+.revenue-sharing:hover,
+.learn-more:hover {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Animation on Scroll */
+.header.animate,
+.mint-info.animate,
+.revenue-sharing.animate,
+.learn-more.animate {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Styling for the Chibi Art image in the Mint Info Section */
+/* Styling for the Mint Info Section */
+.mint-info {
+    width: 80%;
+    margin: 1rem auto; /* Reduce margin for mobile */
+    padding: 1rem; /* Reduce padding for mobile */
+    background: rgba(235, 108, 108, 0.8);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    transition: transform 0.5s, box-shadow 0.5s;
+}
+
+.mint-info-content {
+    flex-direction: column; /* Stack content vertically for mobile */
+}
+
+.chibi-art {
+    width: 100%; /* Adjust width for mobile */
+    max-width: 400px; /* Set a maximum width */
+    height: auto;
+    object-fit: cover;
+    align-items: center;
+    text-align: center;
+    align-content: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 1rem auto; /* Adjust margin for mobile */
+    margin-left: 560px;
+}
+
+
+.triptych {
+    width: 80%; /* Adjust width for mobile */
+    max-width: 300px; /* Set a maximum width */
+    height: auto;
+    object-fit: cover;
+    align-items: center;
+    text-align: center;
+    align-content: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 1rem auto; /* Adjust margin for mobile */
+    margin-left: 600px;
+}
+
+/* Media Queries for Responsive Design */
+
+/* For screens with a maximum width of 768px (typical for mobile devices) */
+@media (max-width: 768px) {
+    /* Adjust the styling for the home container */
+    .home-container {
+        background-attachment: scroll;
+        background-position: top;
+    }
+
+    .clouds {
+        position: relative;
+        margin-top: 0px;
+
+    }
+
+    /* Adjust the styling for Chibi Art image, Revenue Sharing image, and Trippy Abyss image */
+    .chibi-art,
+    .revenue-sharing-image,
+    .triptych {
+        max-width: 100%;
+        height: auto;
+        margin: 1rem auto;
+    }
+
+    /* Adjust the styling for sections: header, mint-info, revenue-sharing, learn-more */
+    .header,
+    .mint-info,
+    .revenue-sharing,
+    .learn-more {
+        width: 80%;
+        margin: 0.5rem auto;
+        padding: 0.5rem;
+    }
+
+
+    /* Adjust the font size for section titles */
+    .header h1,
+    .mint-info h2,
+    .revenue-sharing h2,
+    .learn-more h2 {
+        font-size: 1.5rem;
+    }
+
+    /* Adjust the font size for section paragraphs */
+    .header p,
+    .mint-info p,
+    .revenue-sharing p,
+    .learn-more p {
+        font-size: 1rem;
+    }
+
+    /* Adjust the image size and margin for the Chibi Art image in the Mint Info Section */
+    .chibi-art {
+        width: 100%;
+        max-width: 85%;
+        margin: 1rem auto;
+        padding: 20px;
+    }
+
+    /* Adjust the margin for the Triptych image */
+    .triptych {
+        width: 100%;
+        max-width: 200px;
+        margin: 1rem auto;
+    }
+}

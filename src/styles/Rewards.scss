@@ -1,0 +1,39 @@
+// Rewards.scss
+
+.rewards-container {
+  background: url('../assets/line.webp') no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: 'Blimey Variable', sans-serif;
+  h2 {
+    font-size: 4rem;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  .claim-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #ff0099;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    transition: background-color 0.3s ease;
+position: relative;
+    &:hover {
+      background-color: #ffcc00;
+    }
+  }
+
+  p {
+    font-size: 1.2rem;
+    color: #fff;
+    text-align: center;
+  }
+}

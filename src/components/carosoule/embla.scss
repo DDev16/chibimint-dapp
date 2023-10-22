@@ -1,0 +1,277 @@
+.embla {
+  position: relative;
+
+  padding: 20px;
+  max-width: 100%;
+  height: 150vh;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.embla__viewport {
+  width: 100%;
+  height: 100%;
+  
+}
+
+.embla__viewport.is-draggable {
+  cursor: move;
+  cursor: grab;
+}
+
+.embla__viewport.is-dragging {
+  cursor: grabbing;
+}
+
+.embla__container {
+  display: flex;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -khtml-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  margin-left: -10px;
+  
+}
+
+.embla__slide {
+  padding-left: 0px;
+  min-width: 40%;
+  position: relative;
+  // box-shadow: 0 20px 120px #ff00dd;
+
+
+}
+
+
+
+@keyframes textPulse {
+  0% {
+    transform: scale(1); /* Initial scale */
+  }
+  50% {
+    transform: scale(1.1); /* Slight scale-up */
+  }
+  100% {
+    transform: scale(1); /* Back to original scale */
+  }
+}
+
+
+.embla__slide__inner {
+  position: relative;
+  height: 950px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+  // box-shadow: 0 0 120px #007bff;
+
+  
+  transition: transform 0.3s ease-in-out; // Add a transition for smooth movement
+}
+
+.embla__slide__inner img {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+
+
+  box-shadow: 0 0 120px #007bff;
+
+}
+
+.embla__slide__caption {
+  position: absolute;
+  bottom: 20px; // Adjust the position as needed
+  left: 20px; // Adjust the position as needed
+  background-color: rgba(0, 0, 0, 0.5); // Add a semi-transparent background
+  color: #fff;
+  padding: 10px;
+  height: 500px;
+  
+  border-radius: 5px;
+  opacity: 0;
+  transform: translateY(20px); // Start hidden below the image
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+
+  h3 {
+    margin-top: 30px;
+    margin: 0;
+    font-size: 88px;
+    margin-bottom: 5px;
+    text-align: center; /* Center-align the text horizontally */
+  }
+  
+
+  p {
+    margin: 0;
+    font-size: 24px;
+    font-family: fantasy;
+  }
+}
+
+.embla__slide:hover .embla__slide__caption {
+  opacity: 1;
+  transform: translateY(0); // Slide up when hovered
+}
+
+/* Media query for screens with a maximum width of 768px (typical for mobile devices) */
+@media (max-width: 768px) {
+  .embla__slide {
+    padding-left: 10px;
+    min-width: 100%;
+   
+  }
+
+  
+
+  
+}
+
+
+@media (max-width: 768px) {
+  .embla__slide__caption {
+    position: absolute;
+    bottom: 10px; /* Adjust the position as needed for mobile */
+    left: 10px; /* Adjust the position as needed for mobile */
+    background-color: rgba(0, 0, 0, 0.5); /* Add a semi-transparent background */
+    color: #fff;
+    padding: 10px;
+    height: auto; /* Adjust height for mobile */
+    border-radius: 5px;
+    opacity: 1; /* Set to 1 for mobile, so the caption is always visible */
+    transform: translateY(0); /* Slide up when hovered (remove hover effect) */
+    transition: none; /* Remove transitions for mobile */
+  }
+
+  /* embla-carousel-description.scss */
+
+.embla__slide__caption {
+  p {
+    font-size: 18px;
+    font-family: fantasy;
+    margin-top: 10px; /* Adjust the margin as needed */
+  }
+}
+
+
+  .embla__slide:hover .embla__slide__caption {
+    opacity: 1; /* Keep caption visible on hover for mobile */
+    transform: translateY(0); /* Keep it in position on hover for mobile */
+  }
+
+  h3 {
+    font-size: 32px; /* Adjust the font size for mobile */
+    margin-bottom: 5px;
+    text-align: center;
+  }
+
+  p {
+    font-size: 18px; /* Adjust the font size for mobile */
+    font-family: fantasy;
+  }
+}
+/* Keyframes for the animation */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+.learn-more-button {
+  background-color: #007bff; /* Set the background color */
+  color: #fff; /* Set the text color */
+  border: none; /* Remove button border */
+  padding: 10px 20px; /* Adjust padding as needed */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Show a pointer cursor on hover */
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin-top: 80px;
+  width: 150px;
+  height: 50px;
+  box-shadow: 0 0 20px #007bff;
+  font-family: Blimey;
+  animation: pulse 1s infinite; /* Add a pulsating animation on hover */
+
+  /* Optional: Add hover effect */
+  &:hover {
+    background-color: #0056b3; /* Change background color on hover */
+    color: #fff; /* Change text color on hover */
+
+  }
+
+  /* Optional: Add focus styles for accessibility */
+  &:focus {
+    outline: none; /* Remove default focus outline */
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.3); /* Add a custom focus style */
+  }
+}
+
+
+  
+  .embla__button {
+    outline: 0;
+    cursor: pointer;
+    background-color: transparent;
+    touch-action: manipulation;
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 100%;
+    width: 60px;
+    height: 60px;
+    justify-content: center;
+    align-items: center;
+    fill: #1bcacd;
+    padding: 0;
+    box-shadow: 0 0 20px #1bcacd; /* Ensures the image fills the container vertically */
+
+  }
+  
+  .embla__button:disabled {
+    cursor: default;
+    opacity: 0.3;
+  }
+  
+  .embla__button__svg {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .embla__button--prev {
+    left: 27px;
+  }
+  
+  .embla__button--next {
+    right: 27px;
+  }
+  
+
+  /* Media query for screens with a maximum width of 768px (typical for mobile devices) */
+@media (max-width: 768px) {
+  .embla {
+    padding: 10px; /* Adjust padding for mobile */
+    height: auto; /* Remove fixed height for mobile */
+  }
+
+  .embla__slide {
+    min-width: 100%; /* Occupy full width on mobile */
+  }
+
+  .embla__slide__inner {
+    height: auto; /* Adjust height for mobile */
+  }
+
+  .embla__slide__caption {
+    height: auto; /* Adjust height for mobile */
+  }
+}

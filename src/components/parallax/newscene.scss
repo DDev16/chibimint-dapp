@@ -1,0 +1,143 @@
+/* AnimatedScene.scss */
+
+.parallax-container {
+  position: relative;
+  width: 100%;
+  height: 100vw; /* Adjust the minimum height as needed */
+  overflow: hidden;
+
+}
+
+
+.header-title {
+  font-family: "Blimey Variable";
+  align-content: center;
+  text-align: center;
+}
+
+.welcome-message {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 99;
+}
+
+
+
+.parallax-layer {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bottom-layer {
+  background-image: url('../../assets/giphy.gif');
+  z-index: 1;
+  background-size: 100%; /* Adjust the values to make the image smaller */
+width: 250vh;
+  margin-top: 0vh; /* Adjust as needed for mobile */
+}
+
+
+.clouds1-layer {
+  background-image: url('../../assets/header.png');
+  background-size: 70%; /* Adjust the values to make the image smaller */
+  z-index: 4;
+  top: 0; 
+  margin-left: 300px;
+}
+
+.clouds2-layer {
+  background-image: url('../../assets/3dcloud.png');
+  z-index: 99;
+  margin-top: 50vh; 
+  background-size: 100%; /* Adjust the values to make the image smaller */
+
+}
+
+.clouds3-layer {
+  background-image: url('../../assets/nft.png');
+  z-index: 66;
+  position: absolute;
+  background-size: 85%;
+  margin-left: 150px;
+  margin-top:100vh; /* Adjust as needed for mobile */
+}
+
+.moon-layer {
+  // background-image: url('../../assets/nft.png');
+  z-index:66;
+  margin-top: 50vh;
+  position: absolute;
+}
+
+.nightsky-layer {
+  position: absolute; /* Make the container absolute */
+  top: 0;
+  left: 0;
+  background-image: url('../../assets/3dcloud.png');
+  z-index: 2;
+  margin-top: 0vh; /* Adjust as needed for mobile */
+  /* Add any other styles you need for the container */
+}
+
+
+
+/* Media query for screens with a maximum width of 768px (typical for mobile devices) */
+@media (max-width: 768px) {
+  .welcome-message h1 {
+    font-size: 3rem; /* Adjust the font size for smaller screens */
+  }
+  .parallax-container {
+    position: relative;
+    width: 100%;
+   height: 600px;
+    margin-bottom: 0;
+  
+  }
+  
+
+  /* Adjust the margin-top for all layers to make them fit better on smaller screens */
+  .bottom-layer {
+    width: 680px;
+height: 100%;
+background-size: 100%; /* Adjust the values to make the image smaller */
+margin-top: 0px;
+    
+  }
+  .clouds1-layer {
+    margin-top: 0vw;
+    background-size: 100%; /* Adjust the values to make the image smaller */
+margin-left: 5px;
+  }
+
+  
+  .clouds2-layer {
+    margin-top: 70vw;
+    z-index: 99;
+    background-size: 100%; /* Adjust the values to make the image smaller */
+
+  }
+  .clouds3-layer {
+    background-image: url('../../assets/nft.png');
+    z-index: 66;
+    position: relative;
+    margin-top: 300px; /* Adjust as needed for mobile */
+    background-size: 100%;
+    margin-left: 0px;
+
+  }
+  
+  .moon-layer {
+    width: auto;
+  }
+  .nightsky-layer {
+    margin-top: 0px;
+    /* Remove negative margin for smaller screens */
+  }
+}

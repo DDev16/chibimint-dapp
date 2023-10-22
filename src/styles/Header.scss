@@ -1,0 +1,38 @@
+// Header.scss
+
+$header-bg-color: #333;
+$header-link-color: #fff;
+$header-link-hover-color: #f0f0f0;
+$header-link-glow-color: 0 0 20px rgb(241, 63, 63);; // Vibrant red glow color
+
+header {
+  background-color: $header-bg-color;
+  padding: 20px 0;
+  text-align: center;
+
+  nav {
+    a {
+      text-decoration: none;
+      color: $header-link-color;
+      margin: 0 20px;
+      font-size: 88px;
+      transition: color 0.3s, text-shadow 0.3s; // Added text-shadow transition
+
+      &:hover {
+        color: $header-link-hover-color;
+        text-shadow: 0 0 10px $header-link-glow-color; // Vibrant red glow behind the text
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 10px 0;
+
+    nav {
+      a {
+        font-size: 35px;
+        margin: 0 10px;
+      }
+    }
+  }
+}

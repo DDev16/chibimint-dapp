@@ -1,0 +1,38 @@
+/* Desktop Styles (unchanged) */
+body {
+    font-family: arial, helvetica;
+}
+
+h3 {
+    font-size: 8em;
+    text-align: center;
+    color: #fff;
+    font-weight: 700;
+}
+
+#section1 {
+    color: #fff;
+    height: 700px;
+}
+
+.fp-section {
+    text-align: center;
+    height: 1000px;
+}
+
+.fp-slide {
+    height: 50vh;
+}
+
+button {
+    padding: 0.93em 1.87em;
+    background: #35495e;
+    border-radius: 5px;
+    border-color: transparent;
+    display: block;
+    color: #fff;
+    margin: 0 auto;
+    cursor: pointer;
+    font-size: 0.85em;
+}
+
