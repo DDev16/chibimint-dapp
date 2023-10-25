@@ -5,10 +5,9 @@ import logo from '../assets/logo.png';
 import clouds from '../assets/upside.png';
 
 import backgroundImage from '../assets/night.jpeg';
-import split from '../assets/split.jpeg';
 import NewParallax from "../components/parallax/newparallaxhero.js";
-import MintNFT from './MintNFT';
 import Carosoule from "../components/carosoule/carosoule1.js"
+import MintNFT from './MintNFT.js';
 
 function Home() {
   const [scrollY, setScrollY] = useState(0);
@@ -28,7 +27,6 @@ function Home() {
     return -scrollY * speed + 'px';
   };
 
-  const parallaxOffset = 2;
 
   const logoAnimation = {
     initial: { opacity: 0, scale: 0.8 },
@@ -88,16 +86,13 @@ function Home() {
         <p className="learn-more-description">🌌 Explore the boundless universe of NFTs and unravel your one-of-a-kind Psychedelic Chibi collection. 🌌</p>
         
       </motion.div>
-
-     
-
+<MintNFT />
       <motion.div
         className="learn-more"
         style={{ opacity: 1, y: scrollY * 0.5 }}
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
       >
-        <MintNFT />
         
       </motion.div>
     </div>

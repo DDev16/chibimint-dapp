@@ -1,4 +1,4 @@
-const contractAbi = [
+[
 	{
 		"anonymous": false,
 		"inputs": [
@@ -936,7 +936,7 @@ const contractAbi = [
 		"stateMutability": "nonpayable",
 		"type": "function"
 	}
-];
+]
   
-  export default contractAbi;
+ 
   
