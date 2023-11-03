@@ -2,12 +2,12 @@
 
 $header-bg-color: #333;
 $header-link-color: #fff;
-$header-link-hover-color: #f0f0f0;
+$header-link-hover-color: #166dd1;
 $header-link-glow-color: 0 0 20px rgb(241, 63, 63);; // Vibrant red glow color
 
 header {
   background-color: $header-bg-color;
-  padding: 20px 0;
+  padding: 20px ;
   text-align: center;
 
   nav {
@@ -20,7 +20,7 @@ header {
 
       &:hover {
         color: $header-link-hover-color;
-        text-shadow: 0 0 10px $header-link-glow-color; // Vibrant red glow behind the text
+        text-shadow: 0 0 20px rgba($color: #2878e0, $alpha: 1.0); // Vibrant red glow behind the text
       }
     }
   }
@@ -30,7 +30,7 @@ header {
 
     nav {
       a {
-        font-size: 35px;
+        font-size: 55px;
         margin: 0 10px;
       }
     }

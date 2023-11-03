@@ -27,7 +27,7 @@ const ParallaxScene = () => {
    
       </div>
 
-      <div className="parallax-layer clouds1-layer" style={{ transform: `translateY(${calculateParallax(0.8)})` }}>
+      <div className="parallax-layer clouds1-layer" style={{ transform: `translateY(${calculateParallax(0.5)})` }}>
       </div>
 
       <div className="parallax-layer clouds2-layer" style={{ transform: `translateY(${calculateParallax(0.1)})` }}>

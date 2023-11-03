@@ -1,0 +1,83 @@
+/* MyNFTs.scss */
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.nft-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0px;
+  width: 100%;
+}
+
+.content-container {
+  background: url('../assets/jET9FZ.gif') repeat center center;
+  background-size: contain;
+  height: 100%;
+  position: relative;
+  margin-top: 0;
+}
+
+/* ... (the rest of your styles) */
+
+.nft-item {
+  background: linear-gradient(45deg, #00c8ffc0, #0073ff6b);
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  overflow: hidden; /* Prevents image overflow */
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(45deg, #0072FF, #00C6FF);
+  }
+
+  img {
+    max-width: 100%;
+    max-height: 100%; /* Ensure the image doesn't exceed the container */
+    border-radius: 10px;
+    margin-top: 20px;
+  }
+  
+  h4 {
+    font-size: 35px;
+    margin-top: 15px;
+    font-weight: bold;
+    text-shadow: 0 0 20px rgba(3, 3, 3, 0.781);
+
+  }
+}
+
+h3 {
+  font-size: 65px;
+  margin-top: 15px;
+  font-weight: bold;
+  color: #0072FF;
+text-align: center;
+text-shadow: 0 0 20px rgb(40, 151, 255);
+}
+
+.wallet-address {
+  margin-top: 15px;
+  font-weight: bold;
+  color: #0072FF;
+  text-align: center;
+  text-shadow: 0 0 20px rgb(40, 151, 255);
+
+}
+
+.message {
+  margin-top: 15px;
+}
+
+/* Add more styles as needed */

@@ -1,94 +1,104 @@
-@font-face {
-    font-family: "Blimey Variable";
-    src: url("https://db.onlinewebfonts.com/t/d573c50173f8483a67c0b94b13033396.eot");
-    src: url("https://db.onlinewebfonts.com/t/d573c50173f8483a67c0b94b13033396.eot?#iefix") format("embedded-opentype"),
-         url("https://db.onlinewebfonts.com/t/d573c50173f8483a67c0b94b13033396.woff2") format("woff2"),
-         url("https://db.onlinewebfonts.com/t/d573c50173f8483a67c0b94b13033396.woff") format("woff"),
-         url("https://db.onlinewebfonts.com/t/d573c50173f8483a67c0b94b13033396.ttf") format("truetype"),
-         url("https://db.onlinewebfonts.com/t/d573c50173f8483a67c0b94b13033396.svg#Blimey Variable") format("svg");
+/* Add a retro background pattern */
+.minter-container {
+  background: url('../assets/giphy1.gif');
+  background-size: cover;
+  background-attachment: fixed;
+  height: 150vh; /* Use viewport height for full-screen */
+  width: 100%;
 }
 
-.mint-container {
-    text-align: center;
-    background-image: url('../assets/giphy1.gif'); /* Replace with your image path */
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-    height: 100vh; /* Adjust the height as needed */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Blimey Variable'; /* You may need to import this font */
-    color: #fff;
-    margin-bottom: 100px;
-    width: 100%;
+/* Style the .nft-retro-container */
+.nft-retro-container {
+  background: linear-gradient(45deg, #0077FF, #FF00E8);
+  color: #fff;
+  font-family: 'VT323', monospace;
+  text-align: center;
+  padding: 20px;
+  border: 2px solid transparent;
+  border-image-slice: 1;
+  border-radius: 20px;
+  max-width: 90%; /* Adjust maximum width for mobile screens */
+  margin: 0 auto;
+  animation: fadeIn 1s;
+  margin-top: 10vh; /* Adjust top margin for mobile screens */
+  box-shadow: 0 0 15px rgb(255, 255, 255); /* Reduce shadow for mobile screens */
 }
 
-
-p {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+/* Style the .nft-retro-title */
+.nft-retro-title {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 28px; /* Reduce font size for mobile screens */
+  margin: 0;
+  text-transform: uppercase;
 }
 
-// Mint.scss
+/* Style the .nft-retro-paragraph */
+.nft-retro-paragraph {
+  font-size: 16px; /* Reduce font size for mobile screens */
+  line-height: 1.4; /* Adjust line height for mobile screens */
+}
 
-.mint-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #f0f0f0;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  
-    h1 {
-      font-size: 6rem;
-      color: #ffffff;
-    }
-  
-    .mint-status {
-      margin: 1rem 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-  
-      p {
-        font-size: 2.2rem;
-        color: #f8f8f8;
-      }
-    }
-  
-    .mint-input {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-  
-      input[type="number"] {
-        font-size: 1.2rem;
-        padding: 0.5rem;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        margin-bottom: 1rem;
-        width: 150px;
-      }
-  
-      .mint-button {
-        background-color: #00a8e8;
-        color: white;
-        font-size: 1.4rem;
-        padding: 1rem 2rem;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: background-color 0.3s;
-        position: relative;
-  
-        &:hover {
-          background-color: #008ad5;
-          transform: scale(1.05);
-        }
-      }
-    }
+/* Style the .nft-retro-input-label */
+.nft-retro-input-label {
+  display: block;
+  margin-top: 10px; /* Adjust top margin for mobile screens */
+  font-size: 16px; /* Reduce font size for mobile screens */
+}
+
+/* Style the .nft-retro-mint-amount */
+.nft-retro-mint-amount {
+
+  .nft-retro-button {
+      color: white;
+      font-size: 20px; /* Adjust font size for mobile screens */
+      font-family: 'Press Start 2P', cursive;
+      border: none;
+      cursor: pointer;
+      padding: 5px 10px;
+      border-radius: 50%; /* Make buttons more circular */
+      margin: 0 10px;
+      width: 40px; /* Adjust width to make buttons more circular */
+      margin-left: 20px;
+
   }
-  
+
+  .nft-retro-input {
+      font-size: 20px;
+      text-align: center;
+      border: none;
+      border-radius: 5px;
+      width: 50px;
+  }
+}
+
+/* Style the .nft-retro-input */
+.nft-retro-input {
+  font-size: 20px;
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+  width: 50px;
+}
+
+/* Style the .nft-retro-button */
+.nft-retro-button {
+  background: linear-gradient(45deg, #0077FF, #FF00E8);
+  color: #fff;
+  font-family: 'Inconsolata', monospace;
+  font-size: 20px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  position: relative;
+  transition: background 0.3s, color 0.3s;
+}
+
+.nft-retro-button:hover {
+  background: linear-gradient(45deg, #FF00E8, #0077FF);
+}
+
+.nft-retro-button:active {
+  transform: scale(0.95);
+}

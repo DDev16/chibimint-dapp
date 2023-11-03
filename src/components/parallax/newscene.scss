@@ -118,7 +118,7 @@ margin-left: 5px;
 
   
   .clouds2-layer {
-    margin-top: 70vw;
+    margin-top: 75vw;
     z-index: 99;
     background-size: 100%; /* Adjust the values to make the image smaller */
 
@@ -127,7 +127,7 @@ margin-left: 5px;
     background-image: url('../../assets/nft.png');
     z-index: 66;
     position: relative;
-    margin-top: 300px; /* Adjust as needed for mobile */
+    margin-top: 350px; /* Adjust as needed for mobile */
     background-size: 100%;
     margin-left: 0px;
 
@@ -141,3 +141,5 @@ margin-left: 5px;
     /* Remove negative margin for smaller screens */
   }
 }
+
+

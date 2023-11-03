@@ -1,0 +1,46 @@
+
+body {
+	font-family: "Blimey Variable", sans-serif;
+  font-size:2rem;
+	/* Rest of your body styles */
+  }
+  
+
+  @font-face {
+    font-family: "Blimey Variable";
+    src: url("https://db.onlinewebfonts.com/t/d573c50173f8483a67c0b94b13033396.eot");
+    src: url("https://db.onlinewebfonts.com/t/d573c50173f8483a67c0b94b13033396.eot?#iefix")format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/d573c50173f8483a67c0b94b13033396.woff2")format("woff2"),
+    url("https://db.onlinewebfonts.com/t/d573c50173f8483a67c0b94b13033396.woff")format("woff"),
+    url("https://db.onlinewebfonts.com/t/d573c50173f8483a67c0b94b13033396.ttf")format("truetype"),
+    url("https://db.onlinewebfonts.com/t/d573c50173f8483a67c0b94b13033396.svg#Blimey Variable")format("svg");
+}
+
+// Define variables for reuse
+$blimeyFont: 'Blimey', sans-serif;
+$footerTextColor: #17b7f7; // You can change the color to your preference
+$footerBackgroundColor: #f0f0f000; // You can change the background color to your preference
+
+footer {
+  background-color: $footerBackgroundColor;
+  padding: 20px;
+  text-align: center;
+  font-size: 52px;
+  text-shadow: 0 0 20px #17b7f7;
+  font-family: "Blimey Variable", sans-serif;
+  color: $footerTextColor;
+
+  p {
+    margin: 0;
+  }
+
+  a {
+    text-decoration: none;
+    color: $footerTextColor;
+    font-weight: bold;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

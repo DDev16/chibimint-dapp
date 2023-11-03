@@ -8,6 +8,7 @@ import backgroundImage from '../assets/night.jpeg';
 import NewParallax from "../components/parallax/newparallaxhero.js";
 import Carosoule from "../components/carosoule/carosoule1.js"
 import MintNFT from './MintNFT.js';
+import Footer from './Footer.js';
 
 function Home() {
   const [scrollY, setScrollY] = useState(0);
@@ -71,9 +72,9 @@ function Home() {
             <h2>🎨 Mint Your Chibi Art 🎨</h2>
             <p>✨ Join the Psychedelic Chibis community and unleash your inner artist. ✨</p>
             <div className="cost-info">
-              <p>💰 Presale Cost: 5 ETH 💰</p>
-              <p>💎 Regular Cost: 0.1 BTC 💎</p>
-              <p>🚀 Pre-sale starts on <strong>DATE</strong> 🚀</p>
+              <p>💰 Presale Cost: 1234 SGB 💰</p>
+              <p>💎 Regular Cost: 2468 SGB  💎</p>
+              <p>🚀 Pre-sale starts on <strong>11/10/2023</strong> 🚀</p>
             </div>
             <p className="mint-benefit">🔮 The deeper you dive, the more surreal the rewards! 🔮</p>
             <p>Each mint adds a stroke to the cosmic canvas of Psycho Chibis.</p>
@@ -95,6 +96,8 @@ function Home() {
       >
         
       </motion.div>
+      <Footer />
+
     </div>
   );
 }
