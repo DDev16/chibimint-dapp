@@ -5,6 +5,19 @@ $header-link-color: #fff;
 $header-link-hover-color: #166dd1;
 $header-link-glow-color: 0 0 20px rgb(241, 63, 63);; // Vibrant red glow color
 
+
+/* blimeyfonts.css */
+@font-face {
+  font-family: 'Blimey';
+  src: url('../fonts/blimey/BlimeyVariable.woff2') format('woff2'); /* Update the path */
+  /* Add additional font formats if needed */
+}
+
+/* Apply Blimey font to specific elements */
+body {
+  font-family: 'Blimey', cursive;
+}
+
 header {
   background-color: $header-bg-color;
   padding: 20px ;

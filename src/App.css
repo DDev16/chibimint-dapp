@@ -24,7 +24,13 @@
 	/* Rest of your body styles */
   }
   
-
+  @font-face {
+    font-family: 'BlimeyVariable';
+    src: url('./fonts/blimey/BlimeyVariable.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
   @font-face {
     font-family: "Blimey Variable";
     src: url("https://db.onlinewebfonts.com/t/d573c50173f8483a67c0b94b13033396.eot");

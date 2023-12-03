@@ -37,7 +37,7 @@ function Home() {
  
 
   return (
-    <div className="home-container">
+    <div className="home-container"  >
       <NewParallax />
       <div
         className="background-image"
@@ -56,7 +56,7 @@ function Home() {
         initial={{ opacity: 0, y: -100 }}
         animate={{ opacity: 1, y: 0 }}
       >
-        <h1 className="header-title">Welcome to Psycho Chibis Mint</h1>
+        <h1 className="header-title" style={{ fontFamily: 'BlimeyVariable'}}>Welcome to Psycho Chibis Mint</h1>
         <p className="header-subtitle">Your gateway to unique, mind-bending NFT art.</p>
      <Carosoule />
       </motion.div>
@@ -68,8 +68,8 @@ function Home() {
         animate={{ opacity: 1, x: 0 }}
       >
         <div className="mint-info-content">
-          <div className="mint-info-text">
-            <h2>🎨 Mint Your Chibi Art 🎨</h2>
+          <div className="mint-info-text" >
+            <h2  style={{ fontFamily: 'BlimeyVariable'}}>🎨 Mint Your Chibi Art 🎨</h2>
             <p>✨ Join the Psychedelic Chibis community and unleash your inner artist. ✨</p>
             <div className="cost-info">
               <p>💰 Presale Cost: 1234 SGB 💰</p>
@@ -80,10 +80,10 @@ function Home() {
             <p>Each mint adds a stroke to the cosmic canvas of Psycho Chibis.</p>
           </div>
         </div>
-        <h2>💰 Trippy Revenue Sharing 💰</h2>
+        <h2  style={{ fontFamily: 'BlimeyVariable'}}>💰 Trippy Revenue Sharing 💰</h2>
         <p>🌈 15% of mint proceeds swirl into the pockets of Psycho Chibi NFT holders. 🌈</p>
         <p className="rewards-info">🌀 The more you mint, the bigger the share you get 🌀</p>
-        <h2>🌀 Dive Deeper into the Trippy Abyss 🌀</h2>
+        <h2 style={{ fontFamily: 'BlimeyVariable'}}>🌀 Dive Deeper into the Trippy Abyss 🌀</h2>
         <p className="learn-more-description">🌌 Explore the boundless universe of NFTs and unravel your one-of-a-kind Psychedelic Chibi collection. 🌌</p>
         
       </motion.div>

@@ -14,7 +14,7 @@ function NFTMintingComponent() {
   const [nftRewards, setNftRewards] = useState(0);
   const [isConnected, setIsConnected] = useState(false); // New state variable
 
-  const contractAddress = '0x82e01223d51Eb87e16A03E24687EDF0F294da6f1';
+  const contractAddress = '0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512';
 
   async function connectToEthereum() {
     if (typeof window.ethereum !== 'undefined') {
