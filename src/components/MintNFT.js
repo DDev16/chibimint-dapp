@@ -12,9 +12,10 @@ function NFTMintingComponent() {
   const [regularCost, setRegularCost] = useState('');
   const [totalSupply, setTotalSupply] = useState('');
   const [nftRewards, setNftRewards] = useState(0);
-  const [isConnected, setIsConnected] = useState(false); // New state variable
+  const [isConnected, setIsConnected] = useState(false);
+  const [referralCode, setReferralCode] = useState('');
 
-  const contractAddress = '0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512';
+  const contractAddress = '0x67d269191c92Caf3cD7723F116c85e6E9bf55933';
 
   async function connectToEthereum() {
     if (typeof window.ethereum !== 'undefined') {
@@ -36,7 +37,7 @@ function NFTMintingComponent() {
         const totalSupply = await nftContract.totalSupply();
         setTotalSupply(totalSupply.toString());
 
-        setIsConnected(true); // Set isConnected to true
+        setIsConnected(true);
 
         Swal.fire({
           title: 'Connected to Ethereum',
@@ -115,10 +116,12 @@ function NFTMintingComponent() {
   async function mintNFTs() {
     if (contract) {
       try {
-        const etherAmountInWei = ethers.utils.parseEther(isPresale ? '5' : regularCost);
+        const etherAmountInWei = ethers.utils.parseEther(isPresale ? '20' : regularCost);
         const totalCostInWei = etherAmountInWei.mul(mintAmount);
 
-        const tx = await contract.mint(mintAmount, { value: totalCostInWei });
+        const referralAddress = referralCode ? ethers.utils.getAddress(referralCode) : ethers.constants.AddressZero;
+
+        const tx = await contract.mintWithReferral(mintAmount, referralAddress, { value: totalCostInWei });
         await tx.wait();
 
         Swal.fire({
@@ -159,33 +162,43 @@ function NFTMintingComponent() {
   return (
     <div className="minter-container">
       <div className="nft-retro-container">
-        <h1 className="nft-retro-title">Psycho Chibi Minter</h1>
-        <p className="nft-retro-paragraph"><strong>Please make sure you click connect before attempting to Mint NFTs or Claim rewards</strong></p>
-
+        <h1 className="nft-retro-title">Psycho Chibi NFT Minter</h1>
+        <p className="nft-retro-paragraph">
+          Welcome to the Psycho Chibi NFT Minter! Connect to Ethereum, mint your unique NFTs, 
+          and take advantage of our referral program. Follow the steps below to get started.
+        </p>
+  
         {!isConnected && (
-          <p className="nft-retro-paragraph">
-            <strong>You are not connected, please click connect</strong>
-          </p>
+          <div>
+            <p className="nft-retro-paragraph">
+              <strong>Step 1: Connect to Ethereum</strong><br />
+              To start minting NFTs, please first connect to your Ethereum wallet using MetaMask or a similar provider.
+            </p>
+            <button className="nft-retro-button" onClick={connectToEthereum}>
+              Connect to Ethereum
+            </button>
+          </div>
         )}
-        <button className="nft-retro-button" onClick={connectToEthereum}>
-          Connect to Ethereum
-        </button>
-        <p className="nft-retro-paragraph">NFT Reward Percentage: 10%</p>
-
-        <p className="nft-retro-paragraph">Presale Active: {isPresale ? 'Yes' : 'No'}</p>
-        <p className="nft-retro-paragraph">Current Cost: {currentCost}</p>
-        <p className="nft-retro-paragraph">Presale Cost: 5 SGB</p>
-        <p className="nft-retro-paragraph">Post Presale Cost: 10 SGB</p>
-
-        <p className="nft-retro-paragraph">Total Supply: {totalSupply} out of 10000</p>
-        <p className="nft-retro-paragraph">Accumulated NFT Rewards: {nftRewards} SGB</p>
-
+  
+        <p className="nft-retro-paragraph">
+          <strong>Step 2: Understand Costs and Rewards</strong><br />
+          NFT Reward Percentage: 10%<br />
+          Presale Active: {isPresale ? 'Yes' : 'No'}<br />
+          Current Cost: {currentCost}<br />
+          Presale Cost: 5 SGB<br />
+          Post Presale Cost: 10 SGB<br />
+          Total Supply: {totalSupply} out of 10000<br />
+          Accumulated NFT Rewards: {nftRewards} SGB
+        </p>
+  
+        <p className="nft-retro-paragraph">
+          <strong>Step 3: Mint Your NFTs</strong><br />
+          Choose the number of NFTs you wish to mint. Remember, there's a limit on how many you can mint in one transaction.
+        </p>
         <label className="nft-retro-input-label">
           Mint Amount:
           <div className="nft-retro-mint-amount">
-            <button className="nft-retro-button" onClick={decreaseMintAmount}>
-              -
-            </button>
+            <button className="nft-retro-button" onClick={decreaseMintAmount}>-</button>
             <input
               type="number"
               value={mintAmount}
@@ -193,21 +206,46 @@ function NFTMintingComponent() {
               className="nft-retro-input"
               style={{ inputMode: 'none' }}
             />
-            <button className="nft-retro-button" onClick={increaseMintAmount}>
-              +
-            </button>
+            <button className="nft-retro-button" onClick={increaseMintAmount}>+</button>
           </div>
         </label>
+  
+        <p className="nft-retro-paragraph">
+  <strong>Step 4: Use a Referral Code (Optional)</strong><br />
+  A referral code in our platform is the wallet address of the person who referred you to our NFT minting service. When you use a referral code while minting NFTs, rewards are distributed as follows:
+  <ul>
+    <li><strong>For the Referrer (whose wallet address is used):</strong> They receive 15 Ether for each NFT you mint. This reward is a token of our appreciation for them introducing new users to our platform.</li>
+    <li><strong>For You (the Referee):</strong> You will be rewarded with 250 ERC20 tokens for each NFT minted using the referral code. These tokens serve as a bonus for participating in our referral program, enhancing the value of your engagement with our platform.</li>
+  </ul>
+  If someone referred you to us, make sure to enter their wallet address in the referral code field before you mint your NFTs. This simple act supports our community and rewards those who help it grow.
+</p>
+<label className="nft-retro-input-label">
+  Referrer's Wallet Address:
+  <input
+    type="text"
+    value={referralCode}
+    onChange={(e) => setReferralCode(e.target.value)}
+    className="nft-retro-input"
+  />
+</label>
 
         <button className="nft-retro-button" onClick={mintNFTs}>
           {isPresale ? 'Mint NFTs (Presale)' : 'Mint NFTs (Regular)'}
         </button>
+  
+        <p className="nft-retro-paragraph">
+          <strong>Step 5: Claim Your Rewards</strong><br />
+          If you've earned NFT rewards, use the button below to claim them. Ensure you're connected to the correct Ethereum account.
+        </p>
         <button className="nft-retro-button" onClick={claimRewards}>
           Claim Rewards
         </button>
       </div>
     </div>
   );
+  
+  
+  
 }
 
 export default NFTMintingComponent;

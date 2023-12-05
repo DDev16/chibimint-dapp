@@ -102,3 +102,33 @@
 .nft-retro-button:active {
   transform: scale(0.95);
 }
+
+/* Style the .nft-retro-input-label */
+.nft-retro-input-label {
+  display: block;
+  margin-top: 15px; /* Adjust top margin for mobile screens */
+  font-size: 18px; /* Slightly reduce font size for mobile screens */
+  color: #fff; /* Text color */
+}
+
+/* Style the input field */
+.nft-retro-input {
+  font-size: 18px;
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+  width: 100%; /* Make the input field take up full width */
+  padding: 10px; /* Add padding to the input */
+  background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+  color: #fff; /* Text color */
+  outline: none; /* Remove input focus outline */
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+/* Style the input field on focus */
+.nft-retro-input:focus {
+  background-color: rgba(255, 255, 255, 0.3); /* Lighter background on focus */
+  color: #000; /* Darker text color on focus */
+  border-color: #fff; /* White border color on focus */
+}
+

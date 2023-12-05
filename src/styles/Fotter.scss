@@ -1,19 +1,17 @@
-
 body {
-	font-family: "Blimey Variable", sans-serif;
-  font-size:2rem;
-	/* Rest of your body styles */
-  }
-  
+  font-family: "Blimey Variable", sans-serif;
+  font-size: 2rem;
+  /* Rest of your body styles */
+}
 
-  @font-face {
-    font-family: "Blimey Variable";
-    src: url("https://db.onlinewebfonts.com/t/d573c50173f8483a67c0b94b13033396.eot");
-    src: url("https://db.onlinewebfonts.com/t/d573c50173f8483a67c0b94b13033396.eot?#iefix")format("embedded-opentype"),
-    url("https://db.onlinewebfonts.com/t/d573c50173f8483a67c0b94b13033396.woff2")format("woff2"),
-    url("https://db.onlinewebfonts.com/t/d573c50173f8483a67c0b94b13033396.woff")format("woff"),
-    url("https://db.onlinewebfonts.com/t/d573c50173f8483a67c0b94b13033396.ttf")format("truetype"),
-    url("https://db.onlinewebfonts.com/t/d573c50173f8483a67c0b94b13033396.svg#Blimey Variable")format("svg");
+@font-face {
+  font-family: "Blimey Variable";
+  src: url("https://db.onlinewebfonts.com/t/d573c50173f8483a67c0b94b13033396.eot");
+  src: url("https://db.onlinewebfonts.com/t/d573c50173f8483a67c0b94b13033396.eot?#iefix") format("embedded-opentype"),
+       url("https://db.onlinewebfonts.com/t/d573c50173f8483a67c0b94b13033396.woff2") format("woff2"),
+       url("https://db.onlinewebfonts.com/t/d573c50173f8483a67c0b94b13033396.woff") format("woff"),
+       url("https://db.onlinewebfonts.com/t/d573c50173f8483a67c0b94b13033396.ttf") format("truetype"),
+       url("https://db.onlinewebfonts.com/t/d573c50173f8483a67c0b94b13033396.svg#Blimey Variable") format("svg");
 }
 
 // Define variables for reuse
@@ -42,5 +40,22 @@ footer {
     &:hover {
       text-decoration: underline;
     }
+  }
+
+  // Media query for mobile devices (up to 768px)
+  @media (max-width: 768px) {
+    font-size: 32px;
+    text-shadow: none;
+    padding: 10px;
+    margin-top: 500px; /* Adjust this value to move the footer down more */
+
+    a {
+      font-size: 24px;
+    }
+  }
+
+  // Media query for 360x740 screen size
+  @media (max-width: 360px) and (max-height: 740px) {
+    margin-top: 500px; /* Adjust this value to move the footer down more */
   }
 }

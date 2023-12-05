@@ -88,14 +88,7 @@ function Home() {
         
       </motion.div>
 <MintNFT />
-      <motion.div
-        className="learn-more"
-        style={{ opacity: 1, y: scrollY * 0.5 }}
-        initial={{ opacity: 0, y: 100 }}
-        animate={{ opacity: 1, y: 0 }}
-      >
-        
-      </motion.div>
+     
       <Footer />
 
     </div>
