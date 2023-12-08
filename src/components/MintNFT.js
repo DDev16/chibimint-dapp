@@ -164,18 +164,18 @@ function NFTMintingComponent() {
       <div className="nft-retro-container">
         <h1 className="nft-retro-title">Psycho Chibi NFT Minter</h1>
         <p className="nft-retro-paragraph">
-          Welcome to the Psycho Chibi NFT Minter! Connect to Ethereum, mint your unique NFTs, 
+          Welcome to the Psycho Chibi NFT Minter! Connect to Songbird, mint your unique NFTs, 
           and take advantage of our referral program. Follow the steps below to get started.
         </p>
   
         {!isConnected && (
           <div>
             <p className="nft-retro-paragraph">
-              <strong>Step 1: Connect to Ethereum</strong><br />
-              To start minting NFTs, please first connect to your Ethereum wallet using MetaMask or a similar provider.
+              <strong>Step 1: Connect to Songbird</strong><br />
+              To start minting NFTs, please first connect to your Songbird wallet using MetaMask or a similar provider.
             </p>
             <button className="nft-retro-button" onClick={connectToEthereum}>
-              Connect to Ethereum
+              Connect to Songbird
             </button>
           </div>
         )}
@@ -214,8 +214,8 @@ function NFTMintingComponent() {
   <strong>Step 4: Use a Referral Code (Optional)</strong><br />
   A referral code in our platform is the wallet address of the person who referred you to our NFT minting service. When you use a referral code while minting NFTs, rewards are distributed as follows:
   <ul>
-    <li><strong>For the Referrer (whose wallet address is used):</strong> They receive 15 Ether for each NFT you mint. This reward is a token of our appreciation for them introducing new users to our platform.</li>
-    <li><strong>For You (the Referee):</strong> You will be rewarded with 250 ERC20 tokens for each NFT minted using the referral code. These tokens serve as a bonus for participating in our referral program, enhancing the value of your engagement with our platform.</li>
+    <li><strong>For the Referrer (whose wallet address is used):</strong> They receive 1000 Songbird for each NFT you mint. This reward is a token of our appreciation for them introducing new users to our platform.</li>
+    <li><strong>For You (the Referee):</strong> You will be rewarded with 550 ERC20 tokens for each NFT minted using the referral code. These tokens serve as a bonus for participating in our referral program, enhancing the value of your engagement with our platform.</li>
   </ul>
   If someone referred you to us, make sure to enter their wallet address in the referral code field before you mint your NFTs. This simple act supports our community and rewards those who help it grow.
 </p>
@@ -235,7 +235,7 @@ function NFTMintingComponent() {
   
         <p className="nft-retro-paragraph">
           <strong>Step 5: Claim Your Rewards</strong><br />
-          If you've earned NFT rewards, use the button below to claim them. Ensure you're connected to the correct Ethereum account.
+          If you've earned NFT rewards, use the button below to claim them. Ensure you're connected to the correct Songbird account.
         </p>
         <button className="nft-retro-button" onClick={claimRewards}>
           Claim Rewards
