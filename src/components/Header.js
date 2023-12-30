@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlay, faPause } from '@fortawesome/free-solid-svg-icons';
 import '../styles/Header.scss';
-import music from "../assets/assets/music.mp3";
+import music from "../assets/music2.mp3";
 
 function Header() {
   const audioRef = useRef(null);
@@ -22,13 +22,13 @@ function Header() {
 
   return (
     <header  style={{ fontFamily: 'BlimeyVariable'}}>
-      <nav>
-        <Link to="/">Home</Link>
-        <Link to="/staking">Staking</Link>
-        <Link to="/nfts">My Chibis</Link>
-      </nav>
-      <audio ref={audioRef}>
-        <source src={music} type="audio/mpeg" />
+     <nav>
+  <a href='https://nirvanis-official.vercel.app/' target="_blank" rel="noopener noreferrer">Home</a>
+  <Link to="/nfts">My Chibis</Link>
+</nav>
+
+      <audio ref={audioRef} autoPlay={true}>
+        <source src={music} type="audio/mpeg" autoPlay={true}/>
         Your browser does not support the audio element.
       </audio>
       <button onClick={togglePlay} className="play-button">

@@ -22,6 +22,8 @@ $footerBackgroundColor: #f0f0f000; // You can change the background color to you
 footer {
   background-color: $footerBackgroundColor;
   padding: 20px;
+  margin-top: 200px; /* Adjust this value to move the footer down more */
+  position: relative;
   text-align: center;
   font-size: 52px;
   text-shadow: 0 0 20px #17b7f7;
@@ -30,6 +32,7 @@ footer {
 
   p {
     margin: 0;
+    position: relative;
   }
 
   a {
@@ -47,9 +50,11 @@ footer {
     font-size: 32px;
     text-shadow: none;
     padding: 10px;
-    margin-top: 500px; /* Adjust this value to move the footer down more */
+    margin-top: 1500px; /* Adjust this value to move the footer down more */
 
     a {
+      margin-top: 200px; /* Adjust this value to move the footer down more */
+
       font-size: 24px;
     }
   }

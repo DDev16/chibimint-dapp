@@ -22,7 +22,9 @@
 
 .clouds {
     width: 100%;
-    margin-top: 50vh;
+    
+margin-top: -950px;
+    
     position: absolute;
 }
 
@@ -64,7 +66,7 @@
     font-size: 4rem; /* Adjust font size for mobile */
     margin: 0;
     font-family: "Blimey Variable", sans-serif;
-    
+    text-shadow: 0 0 10px rgb(0, 0, 0); /* Reduce shadow for mobile screens */
     align-items: center;
     text-align: center;
 }
@@ -76,6 +78,8 @@
 .learn-more p {
     font-size: 2rem; /* Adjust font size for mobile */
     text-align: center;
+    text-shadow: 0 0 10px rgb(0, 0, 0); /* Reduce shadow for mobile screens */
+
 }
 
 /* Parallax Animation */
@@ -162,7 +166,7 @@
 
     .clouds {
         position: relative;
-        margin-top: 0px;
+        margin-top: 0;
 
     }
 
@@ -191,7 +195,9 @@
     .mint-info h2,
     .revenue-sharing h2,
     .learn-more h2 {
-        font-size: 1.5rem;
+        font-size: 2.5rem;
+        text-shadow: 0 0 10px rgb(0, 0, 0); /* Reduce shadow for mobile screens */
+
     }
 
     /* Adjust the font size for section paragraphs */
@@ -200,6 +206,8 @@
     .revenue-sharing p,
     .learn-more p {
         font-size: 1rem;
+        text-shadow: 0 0 10px rgb(0, 0, 0); /* Reduce shadow for mobile screens */
+
     }
 
     /* Adjust the image size and margin for the Chibi Art image in the Mint Info Section */

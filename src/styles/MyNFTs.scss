@@ -4,6 +4,8 @@ body, html {
   margin: 0;
   padding: 0;
   height: 100%;
+  background: url('../assets/jET9FZ.gif') repeat center center;
+  background-size: cover;
 }
 
 .nft-container {
@@ -17,8 +19,7 @@ body, html {
 }
 
 .content-container {
-  background: url('../assets/jET9FZ.gif') repeat center center;
-  background-size: contain;
+
   height: 100%;
   position: relative;
   margin-top: 0;
@@ -54,6 +55,8 @@ body, html {
     margin-top: 15px;
     font-weight: bold;
     text-shadow: 0 0 20px rgba(3, 3, 3, 0.781);
+    background-color: rgba(255, 255, 255, 0.1);
+
 
   }
 }
@@ -61,8 +64,11 @@ body, html {
 h3 {
   font-size: 65px;
   margin-top: 15px;
+  background-color: rgba(255, 255, 255, 0.1);
+
   font-weight: bold;
   color: #0072FF;
+  background-color: rgba(255, 255, 255, 0.1);
 text-align: center;
 text-shadow: 0 0 20px rgb(40, 151, 255);
 }
@@ -71,6 +77,8 @@ text-shadow: 0 0 20px rgb(40, 151, 255);
   margin-top: 15px;
   font-weight: bold;
   color: #0072FF;
+  background-color: rgba(255, 255, 255, 0.1);
+
   text-align: center;
   text-shadow: 0 0 20px rgb(40, 151, 255);
 

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import './newscene.scss';
-import sig from "../../assets/by.png";
 const ParallaxScene = () => {
   const [scrollY, setScrollY] = useState(0);
 

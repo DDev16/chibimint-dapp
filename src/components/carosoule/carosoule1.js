@@ -40,16 +40,16 @@ const Gallery = () => {
             <div className="img chib-image9"></div> {/* Apply the CSS class here */}
           </div>
           <div className="line chib-image10"> {/* Apply the CSS class here */}
-            <div className="img chib-image"></div> {/* Apply the CSS class here */}
-          </div>
-          <div className="line chib-image10"> {/* Apply the CSS class here */}
-            <div className="img chib-image"></div> {/* Apply the CSS class here */}
+            <div className="img chib-image10"></div> {/* Apply the CSS class here */}
           </div>
           <div className="line chib-image11"> {/* Apply the CSS class here */}
-            <div className="img chib-image"></div> {/* Apply the CSS class here */}
+            <div className="img chib-image11"></div> {/* Apply the CSS class here */}
           </div>
-          <div className="line chib-image11"> {/* Apply the CSS class here */}
-            <div className="img chib-image"></div> {/* Apply the CSS class here */}
+          <div className="line chib-image12"> {/* Apply the CSS class here */}
+            <div className="img chib-image12"></div> {/* Apply the CSS class here */}
+          </div>
+          <div className="line chib-image13"> {/* Apply the CSS class here */}
+            <div className="img chib-image13"></div> {/* Apply the CSS class here */}
           </div>
            
           {/* Add more images here */}

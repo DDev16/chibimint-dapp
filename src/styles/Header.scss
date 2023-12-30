@@ -1,6 +1,6 @@
 // Header.scss
 
-$header-bg-color: #333;
+$header-bg-color: #33333375;
 $header-link-color: #fff;
 $header-link-hover-color: #166dd1;
 $header-link-glow-color: 0 0 20px rgb(241, 63, 63);; // Vibrant red glow color
@@ -29,15 +29,35 @@ header {
       color: $header-link-color;
       margin: 0 20px;
       font-size: 88px;
-      transition: color 0.3s, text-shadow 0.3s; // Added text-shadow transition
-
+      position: relative; // Add relative positioning to the link
+  
       &:hover {
         color: $header-link-hover-color;
-        text-shadow: 0 0 20px rgba($color: #2878e0, $alpha: 1.0); // Vibrant red glow behind the text
+        text-shadow: 0 0 20px rgba($color: #2878e0, $alpha: 1.0);
+  
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 2px; // Adjust the height of the line as needed
+          background-color: $header-link-hover-color; // Set the line color
+          animation: underline 0.3s ease-in-out; // Add animation
+        }
       }
     }
   }
-
+  
+  @keyframes underline {
+    0% {
+      transform: scaleX(0); // Start with no width
+    }
+    100% {
+      transform: scaleX(1); // End with full width
+    }
+  }
+  
   @media (max-width: 768px) {
     padding: 10px 0;
 

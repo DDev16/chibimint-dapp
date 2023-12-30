@@ -14,8 +14,12 @@ function NFTMintingComponent() {
   const [nftRewards, setNftRewards] = useState(0);
   const [isConnected, setIsConnected] = useState(false);
   const [referralCode, setReferralCode] = useState('');
+  const [connectedAddress, setConnectedAddress] = useState('');
+  const [totalLPFunds, setTotalLPFunds] = useState('');
+  const [totalDelegationFunds, setTotalDelegationFunds] = useState('');
 
-  const contractAddress = '0x67d269191c92Caf3cD7723F116c85e6E9bf55933';
+
+  const contractAddress = '0xaaF158923aDD9763a4eF5fDFB55992E5a3aEEC8d';
 
   async function connectToEthereum() {
     if (typeof window.ethereum !== 'undefined') {
@@ -25,20 +29,23 @@ function NFTMintingComponent() {
         const signer = provider.getSigner();
         const nftContract = new ethers.Contract(contractAddress, NFTContractABI, signer);
         setContract(nftContract);
-
+  
         const presaleStatus = await nftContract.presaleActive();
         const presaleCost = ethers.utils.formatEther(await nftContract.presaleCost());
         setIsPresale(presaleStatus);
-        setCurrentCost(presaleStatus ? `${presaleCost} SGB` : '10 SGB');
-
+        setCurrentCost(presaleStatus ? `${presaleCost} SGB` : '40 SGB');
+  
         const regularCost = ethers.utils.formatEther(await nftContract.regularCost());
         setRegularCost(regularCost);
-
+  
         const totalSupply = await nftContract.totalSupply();
         setTotalSupply(totalSupply.toString());
-
+  
+        const connectedAddress = await signer.getAddress(); // Get the connected address
+        setConnectedAddress(connectedAddress); // Set the connected address state
+  
         setIsConnected(true);
-
+  
         Swal.fire({
           title: 'Connected to Ethereum',
           text: 'You are now connected to Ethereum.',
@@ -46,7 +53,7 @@ function NFTMintingComponent() {
         });
       } catch (error) {
         console.error('Error connecting to Ethereum:', error);
-
+  
         Swal.fire({
           title: 'Error',
           text: 'An error occurred while connecting to Ethereum.',
@@ -55,7 +62,7 @@ function NFTMintingComponent() {
       }
     } else {
       console.log('MetaMask or a similar provider not detected');
-
+  
       Swal.fire({
         title: 'Info',
         text: 'MetaMask or a similar provider is not detected.',
@@ -63,6 +70,23 @@ function NFTMintingComponent() {
       });
     }
   }
+
+  const fetchLPAndDelegationFunds = useCallback(async () => {
+    if (contract) {
+      try {
+        const lpFunds = await contract.getTotalLPFunds();
+        const delegationFunds = await contract.getTotalDelegationFunds();
+console.log('LP Funds:', ethers.utils.formatEther(lpFunds));
+console.log('Delegation Funds:', ethers.utils.formatEther(delegationFunds));
+
+        setTotalLPFunds(ethers.utils.formatEther(lpFunds));
+        setTotalDelegationFunds(ethers.utils.formatEther(delegationFunds));
+      } catch (error) {
+        console.error('Error fetching LP and delegation funds:', error);
+      }
+    }
+  }, [contract]);
+  
 
   const getNFTRewards = useCallback(async () => {
     if (contract) {
@@ -116,7 +140,7 @@ function NFTMintingComponent() {
   async function mintNFTs() {
     if (contract) {
       try {
-        const etherAmountInWei = ethers.utils.parseEther(isPresale ? '20' : regularCost);
+        const etherAmountInWei = ethers.utils.parseEther(isPresale ? '871' : regularCost);
         const totalCostInWei = etherAmountInWei.mul(mintAmount);
 
         const referralAddress = referralCode ? ethers.utils.getAddress(referralCode) : ethers.constants.AddressZero;
@@ -143,11 +167,12 @@ function NFTMintingComponent() {
 
   useEffect(() => {
     async function initialize() {
-      getNFTRewards();
+      fetchLPAndDelegationFunds();
+       getNFTRewards();
     }
 
     initialize();
-  }, [getNFTRewards]);
+  }, [fetchLPAndDelegationFunds, getNFTRewards]);
 
   const increaseMintAmount = () => {
     setMintAmount(mintAmount + 1);
@@ -167,7 +192,10 @@ function NFTMintingComponent() {
           Welcome to the Psycho Chibi NFT Minter! Connect to Songbird, mint your unique NFTs, 
           and take advantage of our referral program. Follow the steps below to get started.
         </p>
-  
+        <p className="nft-retro-paragraph">
+  <strong>Connected Address:</strong> {connectedAddress}
+</p>
+
         {!isConnected && (
           <div>
             <p className="nft-retro-paragraph">
@@ -182,39 +210,30 @@ function NFTMintingComponent() {
   
         <p className="nft-retro-paragraph">
           <strong>Step 2: Understand Costs and Rewards</strong><br />
-          NFT Reward Percentage: 10%<br />
-          Presale Active: {isPresale ? 'Yes' : 'No'}<br />
-          Current Cost: {currentCost}<br />
-          Presale Cost: 5 SGB<br />
-          Post Presale Cost: 10 SGB<br />
-          Total Supply: {totalSupply} out of 10000<br />
-          Accumulated NFT Rewards: {nftRewards} SGB
+          <strong> NFT Reward Percentage: 16%</strong><br />
+          <strong> 7% Liquidity allocation to Psycho Gems Token: Liquidity will not be added until consulted with community and voted in </strong><br /><br />
+          <strong> 7% Delegation allocation to best FTSO: Delegation rewards dispersed to holders monthly,</strong>
+          <strong> Delegation Pot will continue to get added to over time</strong><br />
+          <strong>Presale Cost: 871 SGB</strong><br />
+          <p>
+            PreSale lasts up to 1000 NFTs minted<br />
+          </p>
+          <strong>Post Presale Cost: 1742 SGB </strong><br />
         </p>
+
+       
   
         <p className="nft-retro-paragraph">
           <strong>Step 3: Mint Your NFTs</strong><br />
           Choose the number of NFTs you wish to mint. Remember, there's a limit on how many you can mint in one transaction.
         </p>
-        <label className="nft-retro-input-label">
-          Mint Amount:
-          <div className="nft-retro-mint-amount">
-            <button className="nft-retro-button" onClick={decreaseMintAmount}>-</button>
-            <input
-              type="number"
-              value={mintAmount}
-              onChange={(e) => setMintAmount(e.target.value)}
-              className="nft-retro-input"
-              style={{ inputMode: 'none' }}
-            />
-            <button className="nft-retro-button" onClick={increaseMintAmount}>+</button>
-          </div>
-        </label>
+       
   
         <p className="nft-retro-paragraph">
   <strong>Step 4: Use a Referral Code (Optional)</strong><br />
   A referral code in our platform is the wallet address of the person who referred you to our NFT minting service. When you use a referral code while minting NFTs, rewards are distributed as follows:
   <ul>
-    <li><strong>For the Referrer (whose wallet address is used):</strong> They receive 1000 Songbird for each NFT you mint. This reward is a token of our appreciation for them introducing new users to our platform.</li>
+    <li><strong>For the Referrer (whose wallet address is used):</strong> They receive 100 Songbird for each NFT you mint. This reward is a token of our appreciation for them introducing new users to our platform.</li>
     <li><strong>For You (the Referee):</strong> You will be rewarded with 550 ERC20 tokens for each NFT minted using the referral code. These tokens serve as a bonus for participating in our referral program, enhancing the value of your engagement with our platform.</li>
   </ul>
   If someone referred you to us, make sure to enter their wallet address in the referral code field before you mint your NFTs. This simple act supports our community and rewards those who help it grow.
@@ -228,7 +247,29 @@ function NFTMintingComponent() {
     className="nft-retro-input"
   />
 </label>
+<div className='nft-retro-paragraph'>
+<p>
+ Presale Active: {isPresale ? 'Yes' : 'No'}<br />
+          <strong>Current Cost: {currentCost} </strong><br />
 
+          </p>
+          <strong>Total Supply: {totalSupply} out of 10000 </strong><br />
+
+          </div>
+          <label className="nft-retro-input-label">
+          Mint Amount:
+          <div className="nft-retro-mint-amount">
+            <button className="nft-retro-button-right" onClick={decreaseMintAmount}>-</button>
+            <input
+              type="number"
+              value={mintAmount}
+              onChange={(e) => setMintAmount(e.target.value)}
+              className="nft-retro-input"
+              style={{ inputMode: 'none' }}
+            />
+            <button className="nft-retro-button-left" onClick={increaseMintAmount}>+</button>
+          </div>
+        </label>
         <button className="nft-retro-button" onClick={mintNFTs}>
           {isPresale ? 'Mint NFTs (Presale)' : 'Mint NFTs (Regular)'}
         </button>
@@ -236,10 +277,24 @@ function NFTMintingComponent() {
         <p className="nft-retro-paragraph">
           <strong>Step 5: Claim Your Rewards</strong><br />
           If you've earned NFT rewards, use the button below to claim them. Ensure you're connected to the correct Songbird account.
+          <h1><strong>Accumulated NFT Rewards: {nftRewards} SGB </strong> </h1>
+
         </p>
         <button className="nft-retro-button" onClick={claimRewards}>
           Claim Rewards
         </button>
+        <p className="lp-container">
+        <h2>Fund Details</h2>
+        <p>LP Fund Percentage: 7%</p>
+        <p>LP funds are used to provide liquidity for the Psy/SGB pair</p>
+        <p>LP funds will be community controlled buying</p>
+        <p>Delegation Fund Percentage: 7%</p>
+        <p>Delegation funds are used to delegate to the best FTSO on the Songbird network</p>
+        <p>Delegation funds are dispersed to holders monthly</p>
+
+        <p> <strong>Total LP Funds: {totalLPFunds} SGB</strong></p>
+        <p> <strong>Total Delegation Funds: {totalDelegationFunds} SGB </strong></p>
+      </p>
       </div>
     </div>
   );
