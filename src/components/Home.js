@@ -9,6 +9,7 @@ import NewParallax from "../components/parallax/newparallaxhero.js";
 import Carosoule from "../components/carosoule/carosoule1.js"
 import MintNFT from './MintNFT.js';
 import Footer from './Footer.js';
+import VideoHero from '../components/VideoHero.js';
 
 function Home() {
   const [scrollY, setScrollY] = useState(0);
@@ -92,6 +93,7 @@ function Home() {
         <p className="learn-more-description">🌌 Explore the boundless universe of NFTs and unravel your one-of-a-kind Psychedelic Chibi collection. 🌌</p>
         
       </motion.div>
+      <VideoHero />
 <MintNFT />
      
       <Footer />

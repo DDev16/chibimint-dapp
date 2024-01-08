@@ -27,8 +27,8 @@ function Header() {
   <Link to="/nfts">My Chibis</Link>
 </nav>
 
-      <audio ref={audioRef} autoPlay={true}>
-        <source src={music} type="audio/mpeg" autoPlay={true}/>
+      <audio ref={audioRef} >
+        <source src={music} type="audio/mpeg" />
         Your browser does not support the audio element.
       </audio>
       <button onClick={togglePlay} className="play-button">
