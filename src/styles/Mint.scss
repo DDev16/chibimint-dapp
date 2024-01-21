@@ -125,6 +125,7 @@
   font-size: 18px;
   text-align: center;
   border: none;
+  margin-right: 30px;
   border-radius: 5px;
   width: 100%; /* Make the input field take up full width */
   padding: 10px; /* Add padding to the input */
@@ -162,7 +163,7 @@ margin-top: 50px;
   border-radius: 5px;
   cursor: pointer;
   margin-top: 20px;
-  margin-left: 30px;
+  margin-left: 40px;
   border: 2px solid rgba(0, 0, 0, 0.295);
   box-shadow: 0 0 10px rgb(255, 255, 255); /* Reduce shadow for mobile screens */
   margin-bottom: 20px;
@@ -190,6 +191,8 @@ margin-top: 50px;
   font-family: 'Inconsolata', monospace;
   font-size: 20px;
   padding: 10px 20px;
+  margin-right: 40px;
+
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -207,4 +210,17 @@ margin-top: 50px;
 
 .nft-retro-button:active {
   transform: scale(0.95);
+}
+
+
+/* Mint.scss or another CSS file */
+.swal2-title {
+  font-family: 'Arial', sans-serif; // Example font family
+  font-size: 24px; // Example font size
+}
+
+.swal2-popup {
+  background-color: #f0f0f0; // Example background color
+  border-radius: 15px; // Example border radius
+  font-family: 'Arial', sans-serif; // Example font family
 }

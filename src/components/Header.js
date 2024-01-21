@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlay, faPause } from '@fortawesome/free-solid-svg-icons';
 import '../styles/Header.scss';
-import music from "../assets/music2.mp3";
+import music from "../assets/Rezz - Sacrificial (Official Video) ft. PVRIS.mp3";
 
 function Header() {
   const audioRef = useRef(null);
@@ -25,6 +25,7 @@ function Header() {
      <nav>
   <a href='https://nirvanis-official.vercel.app/' target="_blank" rel="noopener noreferrer">Home</a>
   <Link to="/nfts">My Chibis</Link>
+  <Link to="/">Chibi Mint</Link>
 </nav>
 
       <audio ref={audioRef} >

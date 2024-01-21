@@ -4,7 +4,7 @@ import NFTContractABI from '../abi/contractabi.json';
 import "../styles/MyNFTs.scss"
 
 function MyNFTs() {
-  const contractAddress = '0xaaF158923aDD9763a4eF5fDFB55992E5a3aEEC8d'; // Replace with your contract address
+  const contractAddress = '0xa3055a9Ac1Be0f978d8DD860C9f20BcFe15BF120'; // Replace with your contract address
 
   const [connectedWallet, setConnectedWallet] = useState(null);
   const [nfts, setNFTs] = useState([]);
@@ -30,7 +30,7 @@ function MyNFTs() {
           for (let i = 0; i < balance; i++) {
             const tokenId = await nftContract.tokenOfOwnerByIndex(connectedAddress, i);
             // Construct the image URI as per your format
-            const imageURI = `https://ipfs.io/ipfs/bafybeih6ocvp4vmuibfe2xvuvjjujdi5fi7bb4aylvvakrvejztmuwx7ee/${tokenId}.png`;
+            const imageURI = `https://ipfs.io/ipfs/bafybeidjgv5osvyogglerak62of77onccyss5neb2xocklwhgjozl5ne4u/${tokenId}.png`;
             ownedNFTs.push({ tokenId: tokenId.toString(), imageURI });
           }
   

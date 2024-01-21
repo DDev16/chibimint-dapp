@@ -46,7 +46,7 @@ function Home() {
           backgroundImage: `url(${backgroundImage})`,
         }}
       />
-      <img src={clouds} alt="clouds" className="clouds" style={{ transform: `translateY(${calculateParallax(0.14)})` }} />
+      <img src={clouds} alt="clouds" className="clouds" style={{ transform: `translateY(${calculateParallax(0.16)})` }} />
       <motion.div className="logo-container" {...logoAnimation}>
         <img src={logo} alt="Psycho Chibis Mint Logo" className="logo" />
       </motion.div>
@@ -57,7 +57,7 @@ function Home() {
         initial={{ opacity: 0, y: -100 }}
         animate={{ opacity: 1, y: 0 }}
       >
-        <h2 className="header-title" style={{ fontFamily: 'BlimeyVariable'}}>Welcome to Psycho Chibis Mint</h2>
+        <h2 className="header-title" style={{ fontFamily: 'BlimeyVariable', fontSize: '68px'}}>Welcome to Psycho Chibis Mint</h2>
         <p className="header-subtitle">Your gateway to unique, mind-bending NFT art.</p>
      <Carosoule />
       </motion.div>
@@ -73,20 +73,20 @@ function Home() {
             <h2  style={{ fontFamily: 'BlimeyVariable'}}>🎨 Mint Your Chibi Art 🎨</h2>
             <p>✨ Join the Psychedelic Chibis community and unleash your inner artist. ✨</p>
             <div className="cost-info">
-              <p>💰 Presale Cost: 871 SGB 💰</p>
-              <p>💎 Regular Cost: 1526 SGB  💎</p>
-              <p>🚀 Pre-sale starts on <strong>11/10/2023</strong> 🚀</p>
+              <p>💰 Presale Cost: 2150 SGB 💰</p>
+              <p>💎 Regular Cost: 3550 SGB  💎</p>
+              <p>🚀 Pre-sale is <strong>ACTIVE</strong> 🚀</p>
             </div>
             <p className="mint-benefit">🔮 The deeper you dive, the more surreal the rewards! 🔮</p>
             <p>Each mint adds a stroke to the cosmic canvas of Psycho Chibis.</p>
           </div>
         </div>
         <h2  style={{ fontFamily: 'BlimeyVariable'}}>💰 Trippy Revenue Sharing 💰</h2>
-        <p>🌈 16% of mint proceeds swirl into the pockets of Psycho Chibi NFT holders. 🌈</p>
-        <p> 7% Liquidity allocation to Psycho Gems Token: Liquidity will not be added until consulted with community and voted in </p>
+        <p>🌈 15% of mint proceeds swirl into the pockets of Psycho Chibi NFT holders. 🌈</p>
+        <p> 7% Liquidity allocation to Psycho Gems Token.</p>
           <p> 7% Delegation allocation to best FTSO: Delegation rewards dispersed to holders monthly</p>
-          <p> 100 $SGB tokens referral rewards for every nft minted using your referral code <strong>(wallet address) </strong></p>
-          <p> 550 $PsychoGems tokens referral rewards for every nft minted using your referral code <strong>(Too Minter) </strong></p><br />
+          <p> 350 $SGB tokens referral rewards for every nft minted using your referral code <strong>(wallet address) </strong></p>
+          <p> 350 $PsychoGems tokens referral rewards for every nft minted using your referral code <strong>(Too Minter) </strong></p><br />
 
         <p className="rewards-info">🌀 The more you mint, the bigger the share you get 🌀</p>
         <h2 style={{ fontFamily: 'BlimeyVariable'}}>🌀 Dive Deeper into the Trippy Abyss 🌀</h2>

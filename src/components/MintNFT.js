@@ -3,6 +3,7 @@ import { ethers } from 'ethers';
 import NFTContractABI from '../abi/contractabi.json';
 import Swal from 'sweetalert2';
 import '../styles/Mint.scss';
+import ProgressBar from '../components/ProgressBar.js';
 
 function NFTMintingComponent() {
   const [contract, setContract] = useState(null);
@@ -19,7 +20,7 @@ function NFTMintingComponent() {
   const [totalDelegationFunds, setTotalDelegationFunds] = useState('');
 
 
-  const contractAddress = '0xaaF158923aDD9763a4eF5fDFB55992E5a3aEEC8d';
+  const contractAddress = '0xa3055a9Ac1Be0f978d8DD860C9f20BcFe15BF120';
 
   async function connectToEthereum() {
     if (typeof window.ethereum !== 'undefined') {
@@ -33,7 +34,7 @@ function NFTMintingComponent() {
         const presaleStatus = await nftContract.presaleActive();
         const presaleCost = ethers.utils.formatEther(await nftContract.presaleCost());
         setIsPresale(presaleStatus);
-        setCurrentCost(presaleStatus ? `${presaleCost} SGB` : '40 SGB');
+        setCurrentCost(presaleStatus ? `${presaleCost} SGB` : '3285 SGB');
   
         const regularCost = ethers.utils.formatEther(await nftContract.regularCost());
         setRegularCost(regularCost);
@@ -47,10 +48,15 @@ function NFTMintingComponent() {
         setIsConnected(true);
   
         Swal.fire({
-          title: 'Connected to Ethereum',
-          text: 'You are now connected to Ethereum.',
+          title: 'Connected to Songbird',
+          text: 'You are now connected to Songbird and you can interact with the Psycho Chibi NFT contract.',
           icon: 'success',
+          customClass: {
+            popup: 'swal2-popup', // Your custom class for the popup
+            title: 'swal2-title'  // Your custom class for the title
+          }
         });
+      
       } catch (error) {
         console.error('Error connecting to Ethereum:', error);
   
@@ -58,6 +64,10 @@ function NFTMintingComponent() {
           title: 'Error',
           text: 'An error occurred while connecting to Ethereum.',
           icon: 'error',
+          customClass: {
+            popup: 'swal2-popup', // Your custom class for the popup
+            title: 'swal2-title'  // Your custom class for the title
+          }
         });
       }
     } else {
@@ -67,6 +77,10 @@ function NFTMintingComponent() {
         title: 'Info',
         text: 'MetaMask or a similar provider is not detected.',
         icon: 'info',
+        customClass: {
+          popup: 'swal2-popup', // Your custom class for the popup
+          title: 'swal2-title'  // Your custom class for the title
+        }
       });
     }
   }
@@ -76,8 +90,8 @@ function NFTMintingComponent() {
       try {
         const lpFunds = await contract.getTotalLPFunds();
         const delegationFunds = await contract.getTotalDelegationFunds();
-console.log('LP Funds:', ethers.utils.formatEther(lpFunds));
-console.log('Delegation Funds:', ethers.utils.formatEther(delegationFunds));
+    console.log('LP Funds:', ethers.utils.formatEther(lpFunds));
+    console.log('Delegation Funds:', ethers.utils.formatEther(delegationFunds));
 
         setTotalLPFunds(ethers.utils.formatEther(lpFunds));
         setTotalDelegationFunds(ethers.utils.formatEther(delegationFunds));
@@ -124,6 +138,10 @@ console.log('Delegation Funds:', ethers.utils.formatEther(delegationFunds));
           title: 'Success',
           text: 'Rewards claimed successfully.',
           icon: 'success',
+          customClass: {
+            popup: 'swal2-popup', // Your custom class for the popup
+            title: 'swal2-title'  // Your custom class for the title
+          }
         });
       } catch (error) {
         console.error('Error claiming rewards:', error);
@@ -132,6 +150,10 @@ console.log('Delegation Funds:', ethers.utils.formatEther(delegationFunds));
           title: 'Error',
           text: 'An error occurred while claiming rewards.',
           icon: 'error',
+          customClass: {
+            popup: 'swal2-popup', // Your custom class for the popup
+            title: 'swal2-title'  // Your custom class for the title
+          }
         });
       }
     }
@@ -140,7 +162,7 @@ console.log('Delegation Funds:', ethers.utils.formatEther(delegationFunds));
   async function mintNFTs() {
     if (contract) {
       try {
-        const etherAmountInWei = ethers.utils.parseEther(isPresale ? '871' : regularCost);
+        const etherAmountInWei = ethers.utils.parseEther(isPresale ? '2150' : regularCost);
         const totalCostInWei = etherAmountInWei.mul(mintAmount);
 
         const referralAddress = referralCode ? ethers.utils.getAddress(referralCode) : ethers.constants.AddressZero;
@@ -152,6 +174,10 @@ console.log('Delegation Funds:', ethers.utils.formatEther(delegationFunds));
           title: 'Success',
           text: `${mintAmount} NFTs minted successfully. Total cost: ${ethers.utils.formatEther(totalCostInWei)} Ether`,
           icon: 'success',
+          customClass: {
+            popup: 'swal2-popup', // Your custom class for the popup
+            title: 'swal2-title'  // Your custom class for the title
+          }
         });
       } catch (error) {
         console.error('Error minting NFTs:', error);
@@ -160,6 +186,10 @@ console.log('Delegation Funds:', ethers.utils.formatEther(delegationFunds));
           title: 'Error',
           text: 'An error occurred while minting NFTs.',
           icon: 'error',
+          customClass: {
+            popup: 'swal2-popup', // Your custom class for the popup
+            title: 'swal2-title'  // Your custom class for the title
+          }
         });
       }
     }
@@ -210,22 +240,22 @@ console.log('Delegation Funds:', ethers.utils.formatEther(delegationFunds));
   
         <p className="nft-retro-paragraph">
           <strong>Step 2: Understand Costs and Rewards</strong><br />
-          <strong> NFT Reward Percentage: 16%</strong><br />
-          <strong> 7% Liquidity allocation to Psycho Gems Token: Liquidity will not be added until consulted with community and voted in </strong><br /><br />
-          <strong> 7% Delegation allocation to best FTSO: Delegation rewards dispersed to holders monthly,</strong>
+          <strong> NFT Reward Percentage: 15%</strong><br />
+          <strong> 7% Liquidity allocation to Psycho Gems Token.</strong><br /><br />
+          <strong> 7% Delegation allocation to GoogleCLouds FTSO: Delegation rewards dispersed to holders monthly,</strong>
           <strong> Delegation Pot will continue to get added to over time</strong><br />
-          <strong>Presale Cost: 871 SGB</strong><br />
+          <strong>Presale Cost: 2150 SGB</strong><br />
           <p>
-            PreSale lasts up to 1000 NFTs minted<br />
+            PreSale lasts up to 368 NFTs minted<br />
           </p>
-          <strong>Post Presale Cost: 1742 SGB </strong><br />
+          <strong>Post Presale Cost: 3550 SGB </strong><br />
         </p>
 
        
   
         <p className="nft-retro-paragraph">
           <strong>Step 3: Mint Your NFTs</strong><br />
-          Choose the number of NFTs you wish to mint. Remember, there's a limit on how many you can mint in one transaction.
+          Choose the number of NFTs you wish to mint. Remember, there's a limit of 10 you can mint in one transaction.
         </p>
        
   
@@ -233,8 +263,8 @@ console.log('Delegation Funds:', ethers.utils.formatEther(delegationFunds));
   <strong>Step 4: Use a Referral Code (Optional)</strong><br />
   A referral code in our platform is the wallet address of the person who referred you to our NFT minting service. When you use a referral code while minting NFTs, rewards are distributed as follows:
   <ul>
-    <li><strong>For the Referrer (whose wallet address is used):</strong> They receive 100 Songbird for each NFT you mint. This reward is a token of our appreciation for them introducing new users to our platform.</li>
-    <li><strong>For You (the Referee):</strong> You will be rewarded with 550 ERC20 tokens for each NFT minted using the referral code. These tokens serve as a bonus for participating in our referral program, enhancing the value of your engagement with our platform.</li>
+    <li><strong>For the Referrer (whose wallet address is used):</strong> They receive 350 $SGB for each NFT you mint. This reward is a token of our appreciation for them introducing new users to our platform.</li>
+    <li><strong>For You (the Referee):</strong> You will be rewarded with 350 $PSYGEM tokens for each NFT minted using the referral code. These tokens serve as a bonus for participating in our referral program, enhancing the value of your engagement with our platform.</li>
   </ul>
   If someone referred you to us, make sure to enter their wallet address in the referral code field before you mint your NFTs. This simple act supports our community and rewards those who help it grow.
 </p>
@@ -253,9 +283,11 @@ console.log('Delegation Funds:', ethers.utils.formatEther(delegationFunds));
           <strong>Current Cost: {currentCost} </strong><br />
 
           </p>
-          <strong>Total Supply: {totalSupply} out of 10000 </strong><br />
-
           </div>
+          <div className='nft-retro-paragraph'>
+    <strong>Total Supply: {totalSupply} out of 1568 </strong><br />
+    <ProgressBar total={1568} current={Number(totalSupply)} />
+  </div>
           <label className="nft-retro-input-label">
           Mint Amount:
           <div className="nft-retro-mint-amount">
