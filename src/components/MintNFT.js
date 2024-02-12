@@ -18,6 +18,7 @@ function NFTMintingComponent() {
   const [connectedAddress, setConnectedAddress] = useState("");
   const [totalLPFunds, setTotalLPFunds] = useState("");
   const [totalDelegationFunds, setTotalDelegationFunds] = useState("");
+  const [totalFreeClaims, setTotalFreeClaims] = useState(0);
 
   const contractAddress = "0xa3055a9Ac1Be0f978d8DD860C9f20BcFe15BF120";
 
@@ -109,6 +110,18 @@ function NFTMintingComponent() {
       }
     }
   }, [contract]);
+
+  const fetchTotalFreeClaims = useCallback(async () => {
+    if (contract) {
+      try {
+        const freeClaims = await contract.totalFreeClaims();
+        setTotalFreeClaims(freeClaims.toNumber());
+      } catch (error) {
+        console.error("Error fetching total free claims:", error);
+      }
+    }
+  }, [contract]);
+  
 
   const getNFTRewards = useCallback(async () => {
     if (contract) {
@@ -220,11 +233,13 @@ function NFTMintingComponent() {
   useEffect(() => {
     async function initialize() {
       fetchLPAndDelegationFunds();
+      fetchTotalFreeClaims();
+
       getNFTRewards();
     }
 
     initialize();
-  }, [fetchLPAndDelegationFunds, getNFTRewards]);
+  }, [fetchLPAndDelegationFunds, getNFTRewards, fetchTotalFreeClaims ]);
 
   const increaseMintAmount = () => {
     setMintAmount(mintAmount + 1);
@@ -404,6 +419,10 @@ function NFTMintingComponent() {
         <p className="nft-retro-paragraph">
       <strong>Claim Your Free NFT:</strong> Each wallet is eligible to claim one free NFT. This offer is limited to the first 300 claims.
     </p>
+    <div className="remaining-claims">
+  <p>Only {300 - totalFreeClaims} Free NFT Claims Left!</p>
+
+</div>
         
           <button className="nft-retro-button" onClick={claimFreeNFT}>
             Claim Your Free NFT
