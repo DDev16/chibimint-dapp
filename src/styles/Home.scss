@@ -225,3 +225,24 @@ margin-top: -1950px;
         margin: 1rem auto;
     }
 }
+
+.discord-widget-container {
+    max-width: 350px; // Adjust width as needed
+    height: 500px; // Adjust height as needed
+    overflow: hidden; // Hide overflow if the iframe content is too big
+    border-radius: 10px; // Soften the edges to match site aesthetics
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); // Add some shadow for depth
+    margin: 20px auto; // Center the widget on the page
+  }
+  
+
+  .discord-widget-container {
+    width: 90%; // Use percentage for responsiveness
+    height: 400px; // Adjust base height
+    max-width: 350px; // Ensure it doesn't get too wide on larger screens
+  
+    @media (max-width: 768px) {
+      height: 300px; // Smaller height on mobile devices
+    }
+  }
+  

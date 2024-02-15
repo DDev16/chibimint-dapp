@@ -11,6 +11,23 @@ import MintNFT from './MintNFT.js';
 import Footer from './Footer.js';
 import VideoHero from '../components/VideoHero.js';
 
+function DiscordWidget() {
+  return (
+    <div className="discord-widget-container">
+      <iframe
+        src="https://discord.com/widget?id=1179941871393452134&theme=dark"
+        width="100%"
+        height="100%"
+        allowTransparency="true"
+        frameBorder="0"
+        sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+        title="Discord Widget"
+      ></iframe>
+    </div>
+  );
+}
+
+
 function Home() {
   const [scrollY, setScrollY] = useState(0);
 
@@ -95,8 +112,10 @@ function Home() {
       </motion.div>
       <VideoHero />
 <MintNFT />
+<DiscordWidget />
      
       <Footer />
+      
 
     </div>
   );
